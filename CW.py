@@ -56,3 +56,4 @@ print(y_test.shape)
 
 perceptronFortune = Perceptron(max_iter= 60, tol=(0.001), eta0=1)
 perceptronFortune.fit(X_train,y_train)
+pred_perceptron = perceptronFortune.predict(X_train)
