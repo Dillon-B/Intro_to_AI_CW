@@ -34,12 +34,18 @@ from tensorflow.keras.layers import Dropout
 fortune = pd.read_csv('datasetF1000.csv', nrows= 1000)
 fortune
 
-# X
-# y
+X = fortune[['market value']]
+y = fortune[['Revenue']]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=(45))
 
 training_data, testing_data = train_test_split(fortune, test_size= 0.25, random_state=(30))
 
 print(f"No. of training examples: {training_data.shape[0]}")
 print(f"No. of testing examples: {testing_data.shape[0]}")
+print(f"No. of training examples: {X_train.shape[0]}")
+print(f"No. of testing examples: {X_test.shape[0]}")
+print(f"No. of training examples: {y_train.shape[0]}")
+print(f"No. of testing examples: {y_test.shape[0]}")
 print(training_data.shape)
 print(testing_data.shape)
