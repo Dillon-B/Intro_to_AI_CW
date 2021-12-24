@@ -38,3 +38,4 @@ training_data, testing_data = train_test_split(fortune, test_size= 0.25, random_
 
 print(f"No. of training examples: {training_data.shape[0]}")
 print(f"No. of testing examples: {testing_data.shape[0]}")
+print(training_data.shape)
