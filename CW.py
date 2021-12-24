@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import tensorflow.keras.utils
 import io
+import csv
+import os
 
 from tensorflow import keras
 from sklearn import metrics
@@ -28,3 +30,6 @@ from tensorflow.keras.layers import Dense, Activation
 from tensorflow.keras import regularizers
 from tensorflow.keras.callbacks import EarlyStopping  
 from tensorflow.keras.layers import Dropout 
+
+fortune = pd.read_csv('datasetF1000.csv', nrows= 1000)
+fortune
