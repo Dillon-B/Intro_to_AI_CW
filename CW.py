@@ -33,3 +33,7 @@ from tensorflow.keras.layers import Dropout
 
 fortune = pd.read_csv('datasetF1000.csv', nrows= 1000)
 fortune
+
+X = fortune.data
+y = fortune.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
