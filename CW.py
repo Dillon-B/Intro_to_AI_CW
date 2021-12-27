@@ -38,21 +38,21 @@ fortune = pd.read_csv('datasetF1000.csv')
 fortune
 
 X = fortune.drop(['market value'], axis=1)
-Y = fortune[['market value']]
+Y = fortune[['Revenue']]
 
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
 
-training_data, testing_data = train_test_split(fortune, test_size= 0.25, random_state=(30))
+# training_data, testing_data = train_test_split(fortune, test_size= 0.25, random_state=(30))
 
-print(f"No. of training examples: {training_data.shape[0]}")
-print(f"No. of testing examples: {testing_data.shape[0]}")
+# print(f"No. of training examples: {training_data.shape[0]}")
+# print(f"No. of testing examples: {testing_data.shape[0]}")
 print(f"No. of training examples: {X_train.shape[0]}")
 print(f"No. of testing examples: {X_test.shape[0]}")
 print(f"No. of training examples: {Y_train.shape[0]}")
 print(f"No. of testing examples: {Y_test.shape[0]}")
-print(training_data.shape)
-print(testing_data.shape)
+# print(training_data.shape)
+# print(testing_data.shape)
 print(X_train.shape)
 print(X_test.shape)
 print(Y_train.shape)
@@ -66,8 +66,11 @@ trainingModel = linear_model.LinearRegression()
 
 trainingModel.fit(X_train, Y_train)
 
-LinearRegression(copy_X=True, fit_itercept=True, n_jobs=None, normalize=False)
+linear_model.LinearRegression(copy_X=True, fit_itercept=True, n_jobs=None, normalize=False)
 
 Y_pred = trainingModel.predict(X_test)
+
+from sklearn.metrics import classification_report
+print(classification_report(Y_test, Y_pred, target_names=Y))
 
 
