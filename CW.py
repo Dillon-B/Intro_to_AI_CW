@@ -88,6 +88,6 @@ Y_pred = trainingModel.predict(X_test)
 plt.xlabel('Market Value ($)')
 plt.ylabel('Revenue ($)');
 plt.plot(X_test, Y_pred)
-
+plt.plot(X_test, Y_pred, 'o', color='black');
 
 
