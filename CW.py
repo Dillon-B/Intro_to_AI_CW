@@ -37,8 +37,8 @@ from tensorflow.keras.layers import Dropout
 fortune = pd.read_csv('datasetF1000.csv')
 fortune
 
-X = fortune.drop(['market value'], axis=1)
-Y = fortune[['Revenue']]
+X = fortune[['market value'].replace({'\$':'', ',': ''}, regex=True)]
+Y = fortune[['Revenue'].replace({'\$':'', ',': ''}, regex=True)]
 
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
