@@ -41,6 +41,7 @@ from tensorflow.keras.layers import Dropout
 fortune = pd.read_csv('datasetF1000.csv')
 fortune
 print(fortune.head())
+print(fortune.describe())
 
 matrix = fortune.corr(
     method = 'pearson',  
