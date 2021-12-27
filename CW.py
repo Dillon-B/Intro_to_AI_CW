@@ -15,7 +15,7 @@ import io
 import csv
 import os
 import seaborn as sns
-
+import statsmodels.api as sm
 
 from tensorflow import keras
 from sklearn import metrics
@@ -35,6 +35,7 @@ from tensorflow.keras.layers import Dense, Activation
 from tensorflow.keras import regularizers
 from tensorflow.keras.callbacks import EarlyStopping  
 from tensorflow.keras.layers import Dropout 
+from statsmodels.api import OLS
 
 
 fortune = pd.read_csv('datasetF1000.csv')
@@ -84,8 +85,10 @@ linear_model.LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, norm
 
 Y_pred = trainingModel.predict(X_test)
 
+
 plt.xlabel('Market Value ($)')
 plt.ylabel('Revenue ($)');
 plt.plot(X_test, Y_pred)
+
 
 
