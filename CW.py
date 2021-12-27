@@ -15,7 +15,7 @@ import io
 import csv
 import os
 import seaborn as sns
-
+import statsmodels.api as sm
 
 from tensorflow import keras
 from sklearn import metrics
