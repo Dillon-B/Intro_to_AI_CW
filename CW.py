@@ -80,11 +80,10 @@ trainingModel = linear_model.LinearRegression()
 
 trainingModel.fit(X_train, Y_train)
 
-linear_model.LinearRegression(copy_X=True, fit_itercept=True, n_jobs=None, normalize=False)
+linear_model.LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
 
 Y_pred = trainingModel.predict(X_test)
 
-from sklearn.metrics import classification_report
-print(classification_report(Y_test, Y_pred, target_names=Y))
+
 
 
