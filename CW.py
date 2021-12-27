@@ -42,8 +42,8 @@ fortune
 print(fortune.head())
 
 matrix = fortune.corr(
-    method = 'pearson',  # The method of correlation
-    min_periods = 1      # Min number of observations required
+    method = 'pearson',  
+    min_periods = 1      
 )
 
 matrix = fortune.corr().round(2)
