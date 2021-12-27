@@ -43,6 +43,8 @@ fortune
 print(fortune.head())
 print(fortune.describe())
 
+
+
 matrix = fortune.corr(
     method = 'pearson',  
     min_periods = 1      
