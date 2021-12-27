@@ -89,5 +89,7 @@ plt.xlabel('Market Value ($)')
 plt.ylabel('Revenue ($)');
 plt.plot(X_test, Y_pred)
 plt.plot(X_test, Y_pred, 'o', color='black');
+print('Coefficient: ' , trainingModel.coef_)
+print('Intercept: ' , trainingModel.intercept_)
 
 
