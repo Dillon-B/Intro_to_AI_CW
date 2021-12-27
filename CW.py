@@ -84,6 +84,6 @@ linear_model.LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, norm
 
 Y_pred = trainingModel.predict(X_test)
 
-plt.plot(X,Y)
+plt.plot(X_test, Y_pred)
 
 
