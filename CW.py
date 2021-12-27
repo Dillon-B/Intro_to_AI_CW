@@ -51,8 +51,8 @@ print(matrix)
 sns.heatmap(matrix, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag')
 plt.show()
 
-X = fortune[['market value'].replace({'\$':'', ',': ''}, regex=True)]
-Y = fortune[['Revenue'].replace({'\$':'', ',': ''}, regex=True)]
+X = fortune[['market value']]
+Y = fortune[['Revenue']]
 
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
