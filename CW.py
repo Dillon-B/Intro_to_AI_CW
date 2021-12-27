@@ -14,6 +14,8 @@ import tensorflow.keras.utils
 import io
 import csv
 import os
+import seaborn as sns
+
 
 from tensorflow import keras
 from sklearn import metrics
@@ -34,8 +36,20 @@ from tensorflow.keras import regularizers
 from tensorflow.keras.callbacks import EarlyStopping  
 from tensorflow.keras.layers import Dropout 
 
+
 fortune = pd.read_csv('datasetF1000.csv')
 fortune
+print(fortune.head())
+
+matrix = fortune.corr(
+    method = 'pearson',  # The method of correlation
+    min_periods = 1      # Min number of observations required
+)
+
+matrix = fortune.corr().round(2)
+print(matrix)
+sns.heatmap(matrix, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag')
+plt.show()
 
 X = fortune[['market value'].replace({'\$':'', ',': ''}, regex=True)]
 Y = fortune[['Revenue'].replace({'\$':'', ',': ''}, regex=True)]
