@@ -91,5 +91,6 @@ plt.plot(X_test, Y_pred)
 plt.plot(X_test, Y_pred, 'o', color='black');
 print('Coefficient: ' , trainingModel.coef_)
 print('Intercept: ' , trainingModel.intercept_)
-
+r_sqrd = trainingModel.score(X_test, Y_pred)
+print('R-Squared: ' , r_sqrd)
 
