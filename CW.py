@@ -83,6 +83,7 @@ trainingModel.fit(X_train, Y_train)
 
 linear_model.LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
 
+
 Y_pred = trainingModel.predict(X_test)
 
 plt.xlabel('Market Value ($)')
@@ -93,4 +94,5 @@ print('Coefficient: ' , trainingModel.coef_)
 print('Intercept: ' , trainingModel.intercept_)
 r_sqrd = trainingModel.score(X_test, Y_pred)
 print('R-Squared: ' , r_sqrd)
+
 
