@@ -84,6 +84,8 @@ linear_model.LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, norm
 
 Y_pred = trainingModel.predict(X_test)
 
+plt.xlabel('Market Value')
+plt.ylabel('Revenue');
 plt.plot(X_test, Y_pred)
 
 
