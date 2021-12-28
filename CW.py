@@ -9,15 +9,12 @@ Created on Sat Dec 18 15:46:11 2021
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import tensorflow as tf
-import tensorflow.keras.utils
 import io
 import csv
 import os
 import seaborn as sns
 import statsmodels.api as sm
 
-from tensorflow import keras
 from sklearn import metrics
 from sklearn import preprocessing
 from sklearn import linear_model
@@ -30,11 +27,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import ConfusionMatrixDisplay
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import KFold
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Activation
-from tensorflow.keras import regularizers
-from tensorflow.keras.callbacks import EarlyStopping  
-from tensorflow.keras.layers import Dropout 
 
 
 
@@ -71,11 +63,8 @@ print(f"No. of training examples: {Y_train.shape[0]}")
 print(f"No. of testing examples: {Y_test.shape[0]}")
 # print(training_data.shape)
 # print(testing_data.shape)
-print(X_train.shape)
-print(X_test.shape)
-print(Y_train.shape)
-print(Y_test.shape)
-
+print(X_test.shape, Y_test.shape)
+print(X_test.shape, Y_test.shape)
 #perceptronFortune = Perceptron(max_iter= 60, tol=(0.001), eta0=1)
 #perceptronFortune.fit(X_train,y_train)
 #pred_perceptron = perceptronFortune.predict(X_train)
@@ -96,6 +85,8 @@ plt.plot(X_test, Y_pred)
 plt.plot(X_test, Y_pred, 'o', color='black');
 print('Coefficient: ' , trainingModel.coef_)
 print('Intercept: ' , trainingModel.intercept_)
-r_sqrd = trainingModel.score(X_test, Y_pred)
-print('R-Squared: ' , r_sqrd)
+print('Mean squared error (MSE): %.2f'
+      % mean_squared_error(Y_test, Y_pred))
+print('Coefficient of determination: (R^2): %.2f'
+      % r2_score(Y_test, Y_pred))
 
