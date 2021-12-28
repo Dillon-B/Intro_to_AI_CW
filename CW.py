@@ -99,4 +99,3 @@ print('Intercept: ' , trainingModel.intercept_)
 r_sqrd = trainingModel.score(X_test, Y_pred)
 print('R-Squared: ' , r_sqrd)
 
-
