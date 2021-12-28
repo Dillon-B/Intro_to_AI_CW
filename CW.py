@@ -60,7 +60,8 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
 # Plot the training data
 plt.xlabel('Market Value ($)')
 plt.ylabel('Revenue ($)');
-plt.plot(X_train, Y_train, 'o', color='blue');
+plt.plot(X_train, Y_train, 'o', color='blue')
+plt.show()
 
 # Plot the test data
 plt.xlabel('Market Value ($)')
