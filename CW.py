@@ -57,6 +57,17 @@ Y = fortune[['Revenue']]
 # Split the dataset into testing and training data with a split of 80/20
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
 
+# Plot the training data
+plt.xlabel('Market Value ($)')
+plt.ylabel('Revenue ($)');
+plt.plot(X_train, Y_train, 'o', color='blue');
+
+# Plot the test data
+plt.xlabel('Market Value ($)')
+plt.ylabel('Revenue ($)')
+plt.plot(X_test, Y_test, 'o', color='black')
+plt.show()
+
 # training_data, testing_data = train_test_split(fortune, test_size= 0.25, random_state=(30))
 
 # print(f"No. of training examples: {training_data.shape[0]}")
@@ -92,9 +103,9 @@ Y_pred = trainingModel.predict(X_test)
 # Plot the model
 plt.title('Linear Regression')
 plt.xlabel('Market Value ($)')
-plt.ylabel('Revenue ($)');
+plt.ylabel('Revenue ($)')
 plt.plot(X_test, Y_pred)
-plt.plot(X_test, Y_pred, 'o', color='black');
+plt.plot(X_test, Y_pred, 'o', color='black')
 
 # Print the coeefficient
 print('Coefficient: ' , trainingModel.coef_)
