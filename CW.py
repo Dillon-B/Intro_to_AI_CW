@@ -49,7 +49,7 @@ print(matrix)
 sns.heatmap(matrix, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag')
 plt.show()
 
-# Show which datapoints are being analysed
+# Show which datapoints are being analysed and assigned as input and output variables
 X = fortune[['market value']]
 Y = fortune[['Revenue']]
 
